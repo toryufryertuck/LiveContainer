@@ -123,6 +123,10 @@ NSString* FBSOpenApplicationOptionKeyPayloadURL = @"__PayloadURL";
     return [nud objectForKey:@"LCCertificatePassword"];
 }
 
++ (BOOL)launchToGuestApp {
+    return [self launchToGuestAppWithClassicMode:0];
+}
+
 + (BOOL)launchToGuestAppWithClassicMode:(NSUInteger)classicMode {
     void (^completionHandler)(BOOL) = ^(BOOL success) {
         // syscall(SYS_ptrace, PT_DENY_ATTACH, 0, 0, 0);
